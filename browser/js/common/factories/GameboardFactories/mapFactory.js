@@ -19,7 +19,7 @@ app.factory('MapFactory', function(ClassFactory, TilesizeFactory) {
                 board.push([]);
                 for(var j=0; j<TilesizeFactory.NumTiles; j++){
                     board[i].push([]);
-                }
+                } 
             }
             return board;
         }
@@ -27,7 +27,7 @@ app.factory('MapFactory', function(ClassFactory, TilesizeFactory) {
         resetMap(){
             Crafty("2D").each(function(i) {
                     this.destroy();
-
+                
             });
             this.load(this.originalMap);
         }
@@ -108,11 +108,7 @@ app.factory('MapFactory', function(ClassFactory, TilesizeFactory) {
         isPassable (position) {
             if (!this.onMap(position.x,position.y)) return false;
 
-            var passable = this.mapArray[position.x][position.y].every(obj => {
-
-                return obj.passable === true;
-
-            });
+            var passable = this.mapArray[position.x][position.y].every((obj)=>obj.passable);
             return passable;
         }
 

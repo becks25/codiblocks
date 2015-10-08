@@ -17,9 +17,9 @@ app.factory('SpellComponentFactory', function(){
 	          toolObj.type = 'tool';
 
 	          break;
-	        case 'putDown':
-	          toolObj.action = 'putDown';
-	          toolObj.text = 'put down';
+	        case 'give':
+	          toolObj.action = 'give';
+	          toolObj.text = 'give';
 	          toolObj.variable = null;
 	          toolObj.type = 'tool';
 	          break;
@@ -81,8 +81,8 @@ app.factory('SpellComponentFactory', function(){
 // 	variable: Object (ref to collectable)
 // }
 
-// putDown:{
-// 	action: 'putDown',
+// give:{
+// 	action: 'give',
 // 	variable: Object (ref to collectable)
 // }
 

@@ -67,7 +67,7 @@ var seedPages = function(stories){
             pages.push({
                 story: story._id,
                 text: descr,
-                tools: ['move', 'pickUp', 'putDown', 'ask', 'tell', 'ifStatement', 'forLoop', 'whileLoop'],
+                tools: ['move', 'pickUp', 'give', 'ask', 'tell', 'ifStatement', 'forLoop', 'whileLoop'],
                 variables: ['Omri', 'Zeke', 'Joe', 'Say hi'],
                 concepts: [concepts[Math.floor(Math.random()*concepts.length)]],
                 hint: 'Try harder',
