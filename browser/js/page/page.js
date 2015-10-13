@@ -46,21 +46,16 @@ app.controller('PageCtrl', ($scope, AuthService, $state, page, ClassFactory, SPR
       $scope.hintRequested = true;
     };
 
-    console.log("the actual page", $scope.page)
-
     $scope.nextPage;
-    //var nextPageNumber;
+
   
     $scope.turnPage = () => {
-      console.log("the page number", $scope.page.pageNumber)
+
       for (var i = 0; i < $scope.allPages.length; i++){
         if($scope.allPages[i].storyId === $scope.page.storyId){
-          console.log("made it this far", $scope.allPages[i])
-          console.log("the current number", $scope.page.pageNumber)
           var nextPageNumber = $scope.page.pageNumber + 1;
           if($scope.allPages[i].pageNumber === nextPageNumber){
             $scope.nextPage = $scope.allPages[i];
-            console.log("now here is next page", $scope.nextPage)
 
           }
         }
@@ -68,7 +63,6 @@ app.controller('PageCtrl', ($scope, AuthService, $state, page, ClassFactory, SPR
 
       PageFactory.find($scope.nextPage._id)
       .then(function(page){
-        console.log("in page find", page)
         $state.go('page', {id: page._id})
       }) 
     }
